@@ -1,0 +1,540 @@
+[16/10/2026 20:07] .: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUSRI BEAUTY | Beauty is Personal. Your Glow is Yours.</title>
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement-bar">
+  <span><i class="fas fa-truck"></i> FREE Delivery over 2,500 ETB</span>
+  <span><i class="fas fa-map-marker-alt"></i> Ethiopia Delivery: 100 ETB</span>
+  <span><i class="fas fa-clock"></i> Open 12 PM – 12 AM</span>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-wrap" onclick="scrollToTop()">
+      <div class="logo-circle"><img src="img/logo.png" alt="Logo"></div>
+      <div class="logo-text">
+        <h1>YUSRI BEAUTY</h1>
+        <p>Beauty is personal. Your glow is yours.</p>
+      </div>
+    </div>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Shop</a>
+      <a href="#story">Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="search-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search beauty products..." oninput="liveSearch()">
+    </div>
+    <div class="header-icons">
+      <button onclick="toggleWishlistPanel()"><i class="fas fa-heart"></i><span class="badge" id="wishlistCount">0</span></button>
+      <button onclick="toggleCart()"><i class="fas fa-shopping-bag"></i><span class="badge" id="cartCount">0</span></button>
+      <button class="mobile-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMobileMenu()">Home</a>
+    <a href="#categories" onclick="toggleMobileMenu()">Categories</a>
+    <a href="#products" onclick="toggleMobileMenu()">Shop</a>
+    <a href="#story" onclick="toggleMobileMenu()">Story</a>
+    <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+</header>
+
+<!-- HERO - BIG SHOP IMAGE -->
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('img/21_cosmetics_shop.jpg');"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-tag">✨ WELCOME TO YUSRI BEAUTY</span>
+      <h1>Your beauty.<br><em>Your own kind</em> of magic.</h1>
+      <p>Discover makeup, skincare, perfumes and beauty essentials in Kemisse, Ethiopia. Beauty is personal — your glow is yours.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn-gold"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+        <a href="#story" class="btn-outline"><i class="fas fa-play"></i> Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>500+</strong><span>Happy Customers</span></div>
+        <div><strong>100%</strong><span>Original Products</span></div>
+        <div><strong>12-12</strong><span>Open Daily</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="img/file_00000000dd64820bbae59d33e51112f6.png" alt="Yusri Beauty Store">
+      <div class="hero-card-label">
+        <i class="fas fa-store"></i>
+        <div>
+          <h4>Visit Our Store</h4>
+          <p>Kemisse, Ethiopia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+[16/10/2026 20:07] .: <!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="trust-item"><i class="fas fa-truck-fast"></i><div><h4>Fast Delivery</h4><p>Kemisse & Ethiopia</p></div></div>
+  <div class="trust-item"><i class="fas fa-shield-alt"></i><div><h4>Secure Payment</h4><p>Telebirr & CBE Birr</p></div></div>
+  <div class="trust-item"><i class="fas fa-award"></i><div><h4>100% Original</h4><p>Quality Guaranteed</p></div></div>
+  <div class="trust-item"><i class="fas fa-headset"></i><div><h4>Customer Support</h4><p>Always Here For You</p></div></div>
+</section>
+
+<!-- CATEGORIES - 16 CATEGORIES NOW -->
+<section class="categories" id="categories">
+  <div class="section-head">
+    <span class="kicker">SHOP BY CATEGORY</span>
+    <h2>Your world of beauty.</h2>
+    <p>From everyday essentials to your next beauty obsession.</p>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterProducts('makeup')">
+      <img src="img/02_makeup_collection.jpg" alt="Makeup">
+      <div class="cat-overlay"><span>01</span><h3>Makeup</h3><p>Express your beauty</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('skincare')">
+      <img src="img/03_skincare_set.jpg" alt="Skincare">
+      <div class="cat-overlay"><span>02</span><h3>Skincare</h3><p>Your daily glow</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('perfume')">
+      <img src="img/05_perfume_collection.jpg" alt="Perfume">
+      <div class="cat-overlay"><span>03</span><h3>Perfume</h3><p>Lasting impression</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('body')">
+      <img src="img/06_bodycare.jpg" alt="Body Care">
+      <div class="cat-overlay"><span>04</span><h3>Body Care</h3><p>Care in every detail</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('lipsticks')">
+      <img src="img/04_lipsticks.jpg" alt="Lipsticks">
+      <div class="cat-overlay"><span>05</span><h3>Lipsticks</h3><p>Bold & beautiful</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('nail')">
+      <img src="img/11_nail_polish.jpg" alt="Nail Polish">
+      <div class="cat-overlay"><span>06</span><h3>Nail Polish</h3><p>Colorful nails</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('eye')">
+      <img src="img/10_eye_makeup.jpg" alt="Eye Makeup">
+      <div class="cat-overlay"><span>07</span><h3>Eye Makeup</h3><p>Dramatic eyes</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('blush')">
+      <img src="img/09_blush_and_powder.jpg" alt="Blush & Powder">
+      <div class="cat-overlay"><span>08</span><h3>Blush & Powder</h3><p>Radiant cheeks</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('mask')">
+      <img src="img/13_facial_mask.jpg" alt="Facial Mask">
+      <div class="cat-overlay"><span>09</span><h3>Facial Mask</h3><p>Spa at home</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('lipgloss')">
+      <img src="img/14_lip_gloss.jpg" alt="Lip Gloss">
+      <div class="cat-overlay"><span>10</span><h3>Lip Gloss</h3><p>Shiny lips</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('serum')">
+      <img src="img/16_serum_products.jpg" alt="Serum">
+      <div class="cat-overlay"><span>11</span><h3>Serum</h3><p>Glow boost</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('lotion')">
+      <img src="img/23_body_lotion.jpg" alt="Body Lotion">
+[16/10/2026 20:07] .: <div class="cat-overlay"><span>12</span><h3>Body Lotion</h3><p>Soft skin</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('accessories')">
+      <img src="img/24_beauty_accessories.jpg" alt="Accessories">
+      <div class="cat-overlay"><span>13</span><h3>Accessories</h3><p>Beauty tools</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('sunscreen')">
+      <img src="img/25_sunscreen.jpg" alt="Sunscreen">
+      <div class="cat-overlay"><span>14</span><h3>Sunscreen</h3><p>Sun protection</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('mascara')">
+      <img src="img/29_mascara_tools.jpg" alt="Mascara">
+      <div class="cat-overlay"><span>15</span><h3>Mascara</h3><p>Bold lashes</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="cat-card" onclick="filterProducts('brushes')">
+      <img src="img/07_makeup_brushes.jpg" alt="Brushes & Tools">
+      <div class="cat-overlay"><span>16</span><h3>Brushes & Tools</h3><p>Pro tools</p><i class="fas fa-arrow-right"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo">
+  <div class="promo-inner">
+    <div class="promo-text">
+      <span class="promo-tag">LIMITED TIME OFFER</span>
+      <h2>UP TO <em>50% OFF</em></h2>
+      <p>On selected beauty items. Treat yourself to something special today.</p>
+      <a href="#products" class="btn-gold"><i class="fas fa-tags"></i> Shop The Sale</a>
+    </div>
+    <div class="promo-img">
+      <img src="img/04_lipsticks.jpg" alt="Sale">
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-head">
+    <span class="kicker">THE BEAUTY EDIT</span>
+    <h2>Meet your next favorite.</h2>
+    <p>Explore our selection of beauty essentials for your everyday routine.</p>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+      <button class="filter-btn" onclick="filterProducts('makeup', this)">Makeup</button>
+      <button class="filter-btn" onclick="filterProducts('skincare', this)">Skincare</button>
+      <button class="filter-btn" onclick="filterProducts('perfume', this)">Perfume</button>
+      <button class="filter-btn" onclick="filterProducts('body', this)">Body Care</button>
+      <button class="filter-btn" onclick="filterProducts('lipsticks', this)">Lipsticks</button>
+      <button class="filter-btn" onclick="filterProducts('nail', this)">Nail Polish</button>
+      <button class="filter-btn" onclick="filterProducts('eye', this)">Eye Makeup</button>
+      <button class="filter-btn" onclick="filterProducts('blush', this)">Blush & Powder</button>
+      <button class="filter-btn" onclick="filterProducts('mask', this)">Facial Mask</button>
+      <button class="filter-btn" onclick="filterProducts('lipgloss', this)">Lip Gloss</button>
+      <button class="filter-btn" onclick="filterProducts('serum', this)">Serum</button>
+      <button class="filter-btn" onclick="filterProducts('lotion', this)">Body Lotion</button>
+      <button class="filter-btn" onclick="filterProducts('accessories', this)">Accessories</button>
+      <button class="filter-btn" onclick="filterProducts('sunscreen', this)">Sunscreen</button>
+      <button class="filter-btn" onclick="filterProducts('mascara', this)">Mascara</button>
+      <button class="filter-btn" onclick="filterProducts('brushes', this)">Brushes</button>
+    </div>
+    <select id="sortSelect" onchange="sortProducts()">
+      <option value="default">Featured</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="name">Name: A-Z</option>
+      <option value="rating">Top Rated</option>
+    </select>
+  </div>
+[16/10/2026 20:07] .: <div id="searchInfo" class="search-info" style="display:none;"></div>
+  <div class="products-grid" id="productsGrid"></div>
+  <div class="load-more-wrap">
+    <button class="load-more-btn" onclick="loadMoreProducts()" id="loadMoreBtn">
+      Load More <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-head">
+    <span class="kicker">YOUR BEAUTY. YOUR WAY.</span>
+    <h2>Find Your Beauty Inspiration</h2>
+    <p>Explore beautiful colors, skincare essentials, and little details that make you feel special.</p>
+  </div>
+  <div class="gallery-grid">
+    <img src="img/01_beauty_model.jpg" alt="">
+    <img src="img/26_hijab_beauty_model.jpg" alt="">
+    <img src="img/17_skincare_model.jpg" alt="">
+    <img src="img/10_eye_makeup.jpg" alt="">
+    <img src="img/13_facial_mask.jpg" alt="">
+    <img src="img/14_lip_gloss.jpg" alt="">
+    <img src="img/18_pink_perfume.jpg" alt="">
+    <img src="img/07_makeup_brushes.jpg" alt="">
+    <img src="img/09_blush_and_powder.jpg" alt="">
+    <img src="img/11_nail_polish.jpg" alt="">
+    <img src="img/12_beauty_bag.jpg" alt="">
+    <img src="img/22_lipstick_and_gloss.jpg" alt="">
+    <img src="img/19_makeup_palette.jpg" alt="">
+    <img src="img/28_gift_box.jpg" alt="">
+    <img src="img/08_green_skincare.jpg" alt="">
+    <img src="img/20_hair_extensions.jpg" alt="">
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-img">
+      <img src="img/15_beauty_store.jpg" alt="Store">
+      <div class="story-badge"><span>Y</span><small>YB.</small></div>
+    </div>
+    <div class="story-copy">
+      <span class="kicker">THE STORY BEHIND THE BEAUTY</span>
+      <h2>More than products. A feeling.</h2>
+      <p>Welcome to <strong>YUSRI BEAUTY</strong>, your destination for discovering beauty essentials that complement your unique style.</p>
+      <p>We believe beauty is personal. It can be found in the shade you love, the fragrance you remember, and the little rituals that make an ordinary day special.</p>
+      <div class="story-features">
+        <div><i class="fas fa-map-marker-alt"></i><div><h4>Our Location</h4><p>Kemisse, Ethiopia — Around Dawe Mosque</p></div></div>
+        <div><i class="fas fa-clock"></i><div><h4>Working Hours</h4><p>Every day from 12 PM to 12 AM</p></div></div>
+      </div>
+      <a href="#products" class="btn-gold"><i class="fas fa-compass"></i> Explore Our World</a>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps">
+  <div class="section-head">
+    <span class="kicker">SIMPLE AND EASY</span>
+    <h2>Your Beauty Shopping Journey</h2>
+  </div>
+  <div class="steps-row">
+    <div class="step"><div class="step-icon"><i class="fas fa-search"></i></div><span class="step-num">01</span><h4>Discover</h4><p>Explore our beauty categories.</p></div>
+    <div class="step"><div class="step-icon"><i class="fas fa-heart"></i></div><span class="step-num">02</span><h4>Choose</h4><p>Add your favorites to cart.</p></div>
+    <div class="step"><div class="step-icon"><i class="fas fa-paper-plane"></i></div><span class="step-num">03</span><h4>Send Order</h4><p>Checkout via Telegram.</p></div>
+    <div class="step"><div class="step-icon"><i class="fas fa-truck"></i></div><span class="step-num">04</span><h4>Receive</h4><p>We deliver to your door.</p></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-head">
+    <span class="kicker">WHAT OUR CUSTOMERS SAY</span>
+    <h2>Loved by Beauty Lovers</h2>
+  </div>
+  <div class="reviews-grid" id="reviewsContainer"></div>
+  <div class="review-form">
+    <h3>Share Your Experience</h3>
+    <form onsubmit="submitReview(event)">
+      <div class="star-input">
+[16/10/2026 20:07] .: <label>Your Rating:</label>
+        <div class="stars" id="starRating">
+          <i class="far fa-star" onclick="setRating(1)"></i>
+          <i class="far fa-star" onclick="setRating(2)"></i>
+          <i class="far fa-star" onclick="setRating(3)"></i>
+          <i class="far fa-star" onclick="setRating(4)"></i>
+          <i class="far fa-star" onclick="setRating(5)"></i>
+        </div>
+      </div>
+      <input type="text" id="reviewName" placeholder="Your Name" required>
+      <textarea id="reviewText" placeholder="Tell us about your experience..." required></textarea>
+      <button type="submit" class="btn-gold"><i class="fas fa-paper-plane"></i> Submit Review</button>
+    </form>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <span class="kicker">A NOTE FROM YUSRI BEAUTY</span>
+    <h2>A Little Beauty in Your Inbox</h2>
+    <p>Stay inspired with beauty tips, new product updates, and special announcements.</p>
+    <form onsubmit="subscribeNewsletter(event)">
+      <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-head">
+    <span class="kicker">WE WOULD LOVE TO HEAR FROM YOU</span>
+    <h2>Let's Talk Beauty</h2>
+    <p>Contact YUSRI BEAUTY for assistance with your beauty needs.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Our Location</h4><p>Kemisse, Ethiopia — Around Dawe Mosque</p></div></div>
+      <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Working Hours</h4><p>Every Day: 12 PM – 12 AM</p></div></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>yusrina9819@gmail.com</p></div></div>
+      <div class="contact-item"><i class="fab fa-telegram"></i><div><h4>Telegram</h4><p>@Yusu_Market</p></div></div>
+      <div class="contact-item"><i class="fab fa-tiktok"></i><div><h4>TikTok</h4><p>@yusrina849</p></div></div>
+      <div class="contact-item"><i class="fas fa-mobile-alt"></i><div><h4>Telebirr</h4><p>0955696782 — Yusra Yahya</p></div></div>
+      <div class="contact-item"><i class="fas fa-university"></i><div><h4>CBE Birr</h4><p>1000391867562 — Yusra Yahya</p></div></div>
+    </div>
+    <form class="contact-form" onsubmit="sendContactMessage(event)">
+      <h3>Send Us a Message</h3>
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="email" id="contactEmail" placeholder="Your Email" required>
+      <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+      <textarea id="contactMessage" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn-gold"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="logo-circle footer-logo"><img src="img/logo.png" alt="Logo"></div>
+      <h3>YUSRI BEAUTY</h3>
+      <p class="tagline">Beauty is personal. Your glow is yours.</p>
+      <p>Your destination for beauty essentials in Kemisse, Ethiopia.</p>
+      <div class="socials">
+        <a href="https://t.me/Yusu_Market" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://tiktok.com/@yusrina849" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="mailto:yusrina9819@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+[16/10/2026 20:07] .: <li><a href="#categories">Categories</a></li>
+        <li><a href="#products">Shop Products</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#products" onclick="filterProducts('makeup')">Makeup</a></li>
+        <li><a href="#products" onclick="filterProducts('skincare')">Skincare</a></li>
+        <li><a href="#products" onclick="filterProducts('perfume')">Perfume</a></li>
+        <li><a href="#products" onclick="filterProducts('lipsticks')">Lipsticks</a></li>
+        <li><a href="#products" onclick="filterProducts('nail')">Nail Polish</a></li>
+        <li><a href="#products" onclick="filterProducts('serum')">Serum</a></li>
+        <li><a href="#products" onclick="filterProducts('sunscreen')">Sunscreen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul class="contact-list">
+        <li><i class="fas fa-map-marker-alt"></i> Kemisse, Ethiopia</li>
+        <li><i class="fas fa-clock"></i> 12 PM – 12 AM Daily</li>
+        <li><i class="fas fa-envelope"></i> yusrina9819@gmail.com</li>
+        <li><i class="fab fa-telegram"></i> @Yusu_Market</li>
+        <li><i class="fab fa-tiktok"></i> @yusrina849</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-pay">
+    <h4>We Accept</h4>
+    <div class="pay-methods">
+      <span><i class="fas fa-mobile-alt"></i> Telebirr: 0955696782</span>
+      <span><i class="fas fa-university"></i> CBE Birr: 1000391867562</span>
+      <span><i class="fas fa-user"></i> Yusra Yahya</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 YUSRI BEAUTY. All rights reserved.</p>
+    <p>Made with <i class="fas fa-heart"></i> in Kemisse, Ethiopia</p>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h2><i class="fas fa-shopping-bag"></i> Your Shopping Bag</h2>
+    <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFooter">
+    <div class="row"><span>Subtotal:</span><span id="cartSubtotal">0 ETB</span></div>
+    <div class="row"><span>Delivery:</span><span id="cartDelivery">100 ETB</span></div>
+    <div class="row total"><span>TOTAL:</span><span id="cartTotal">0 ETB</span></div>
+    <button class="btn-gold full" onclick="openCheckout()"><i class="fas fa-check-circle"></i> Proceed to Checkout</button>
+    <button class="btn-plain full" onclick="toggleCart()"><i class="fas fa-arrow-left"></i> Continue Shopping</button>
+  </div>
+</div>
+
+<!-- WISHLIST PANEL -->
+<div class="drawer wishlist-drawer" id="wishlistPanel">
+  <div class="drawer-head pink">
+    <h2><i class="fas fa-heart"></i> Your Wishlist</h2>
+    <button onclick="toggleWishlistPanel()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="drawer-body" id="wishlistItems"></div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeCheckout()"><i class="fas fa-times"></i></button>
+    <div class="modal-head">
+      <div class="logo-circle modal-logo"><img src="img/logo.png" alt="Logo"></div>
+      <h2>Complete Your Order</h2>
+      <p>Fill your details and follow the payment steps below.</p>
+    </div>
+    <form id="checkoutForm" onsubmit="submitOrder(event)">
+      <div class="fsec">
+        <h3><i class="fas fa-user"></i> Your Information</h3>
+        <div class="fr"><input type="text" id="customerName" placeholder="Full Name *" required><input type="tel" id="customerPhone" placeholder="Phone (09...) *" required></div>
+[16/10/2026 20:07] .: <input type="email" id="customerEmail" placeholder="Email (optional)">
+      </div>
+      <div class="fsec">
+        <h3><i class="fas fa-map-marker-alt"></i> Delivery</h3>
+        <div class="fr"><input type="text" id="customerCity" placeholder="City *" required><input type="text" id="customerSubcity" placeholder="Sub-city"></div>
+        <textarea id="customerAddress" placeholder="Full Address *" required></textarea>
+        <label>Delivery Method:</label>
+        <select id="deliveryOption" onchange="updateCheckoutTotal()">
+          <option value="100">Inside Ethiopia — 100 ETB</option>
+          <option value="0">Kemisse Center — Distance based</option>
+        </select>
+      </div>
+      <div class="fsec">
+        <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+        <div class="pay-opts">
+          <label><input type="radio" name="payment" value="Telebirr" checked><span><i class="fas fa-mobile-alt"></i> Telebirr</span></label>
+          <label><input type="radio" name="payment" value="CBE Birr"><span><i class="fas fa-university"></i> CBE Birr</span></label>
+          <label><input type="radio" name="payment" value="Cash on Delivery"><span><i class="fas fa-money-bill-wave"></i> Cash</span></label>
+        </div>
+      </div>
+      <div class="fsec pay-box">
+        <h3><i class="fas fa-info-circle"></i> How To Pay</h3>
+        <p>Send payment to one of these accounts:</p>
+        <div class="pay-account">
+          <div class="pay-ic green"><i class="fas fa-mobile-alt"></i></div>
+          <div><h4>Telebirr</h4><p class="num">0955696782</p><p class="nm">Yusra Yahya</p></div>
+          <button type="button" class="copy" onclick="copyText('0955696782')"><i class="fas fa-copy"></i></button>
+        </div>
+        <div class="pay-account">
+          <div class="pay-ic purple"><i class="fas fa-university"></i></div>
+          <div><h4>CBE Birr</h4><p class="num">1000391867562</p><p class="nm">Yusra Yahya</p></div>
+          <button type="button" class="copy" onclick="copyText('1000391867562')"><i class="fas fa-copy"></i></button>
+        </div>
+        <div class="pay-steps">
+          <p><i class="fas fa-check"></i> Open Telebirr / CBE Birr app</p>
+          <p><i class="fas fa-check"></i> Send the total amount</p>
+          <p><i class="fas fa-check"></i> Take a screenshot of your receipt</p>
+          <p><i class="fas fa-check"></i> Send screenshot to @Yusu_Market on Telegram</p>
+        </div>
+      </div>
+      <div class="fsec">
+        <h3><i class="fas fa-receipt"></i> Payment Confirmation</h3>
+        <label>Transaction ID (from your receipt):</label>
+        <input type="text" id="transactionId" placeholder="Enter transaction ID" required>
+        <label class="check-line"><input type="checkbox" id="paymentConfirmed" required><span>I have sent the payment and will send the screenshot on Telegram.</span></label>
+      </div>
+      <div class="order-summary">
+        <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+        <div id="checkoutSummary"></div>
+        <div class="summary-total"><span>TOTAL:</span><span id="checkoutTotal">0 ETB</span></div>
+      </div>
+      <button type="submit" class="btn-gold full" id="submitOrderBtn"><i class="fas fa-paper-plane"></i> Send Order via Telegram</button>
+      <p class="note"><i class="fas fa-info-circle"></i> We will verify your payment and contact you on Telegram.</p>
+    </form>
+  </div>
+</div>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal" id="quickViewModal">
+  <div class="modal-box quick">
+    <button class="modal-x" onclick="closeQuickView()"><i class="fas fa-times"></i></button>
+    <div id="quickViewContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Added!</span></div>
+
+<!-- FLOATING TELEGRAM -->
+<a href="https://t.me/Yusu_Market" target="_blank" class="float-tg"><i class="fab fa-telegram"></i></a>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+[16/10/2026 20:07] .: <script src="script.js"></script>
+</body>
+</html>
