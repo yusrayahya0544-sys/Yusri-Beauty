@@ -1,4 +1,4 @@
-var TELEGRAM_BOT_TOKEN = '8940465432:AAHgc9soiqvNy2ZK1S4dF_Ih2QRD5px_peo';
+var TELEGRAM_BOT_TOKEN = '8940465432:AAGb_m9VIslWjufrD3XoQkTx5LbNQx8_bKE';
 var TELEGRAM_CHAT_ID = '7791885657';
 var TELEGRAM_API = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage';
 
